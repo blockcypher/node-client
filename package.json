@@ -1,0 +1,11 @@
+{
+  "name"          : "bcypher-node-client",
+  "version"       : "0.1.0",
+  "description"   : "Noder's REST API client for BlockCypher.",
+  "dependencies"  : { 
+    "protagonist" : "0.17.1",
+    "q"           : "1.0.1",
+    "restler"     : "3.2.x",
+    "url-template": "2.0.x"
+  }
+}
