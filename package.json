@@ -3,5 +3,6 @@
 	"main"          : "./lib/bcypher.js",
   "version"       : "0.2.0",
   "description"   : "A REST API client for BlockCypher",
-  }
+	"repository"    : "https://github.com/blockcypher/node-client",
+	"license"       : "MIT"
 }

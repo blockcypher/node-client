@@ -1,27 +1,45 @@
 node-client
 ===========
 
-Node.js SDK for the BlockCypher Web services. See http://www.blockcypher.com
+Node.js SDK for the BlockCypher Web services. See [http://dev.blockcypher.com](http://dev.blockcypher.com/) for detailed documentation.
+
+To install, just use npm:
+
+```bash
+npm install blockcypher
+```
 
 Examples
 --------
 
 ```javascript
-var bcypher = require('blockcypher-node');
+bcypher = require('blockcypher');
+
+var bcapi = new bcypher('btc','main','YOURTOKEN');
 
 function printResponse(err, data) {
-  if (err != nil) {
+  if (err !== null) {
     console.log(err);
   } else {
     console.log(data);
   }
 }
 
-bcypher("btc", "main", "[TOKEN]", function(api) {
-  api.blocks.get(100, printResponse);
-  api.addresses.get('1DEP8i3QJCsomS4BSMY2RpU1upv62aGvhD', printResponse);
-  api.addresses.balance('1DEP8i3QJCsomS4BSMY2RpU1upv62aGvhD', printResponse);
-  api.payments.create({'destination': 'mtWg6ccLiZWw2Et7E5UqmHsYgrAi5wqiov'}, printResponse);
-});
+//get chain info
+bcapi.getChain(printResponse);
+//get block height without any optional URL params
+bcapi.getBlock(300000, {}, printResponse);
+//get block height with an optional "txstart" param, as outlined in docs here: http://dev.blockcypher.com/
+bcapi.getBlock(300000, {txstart:2}, printResponse);
 
+//let's try a post request, like making a new webhook
+var webhook = {
+	event: "unconfirmed-tx",
+	address: "15qx9ug952GWGTNn7Uiv6vode4RcGrRemh",
+	url: "https://my.domain.com/callbacks/new-tx"
+};
+bcapi.createHook(webhook, printResponse);
+
+//Now let's list all of our webhooks
+bcapi.listHooks(printResponse);
 ```
