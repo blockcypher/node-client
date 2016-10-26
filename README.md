@@ -28,7 +28,7 @@ function printResponse(err, data) {
 //get chain info
 bcapi.getChain(printResponse);
 //get block height without any optional URL params
-bcapi.getBlock(300000, {}, printResponse);
+bcapi.getBlock(300000, printResponse);
 //get block height with an optional "txstart" param, as outlined in docs here: http://dev.blockcypher.com/
 bcapi.getBlock(300000, {txstart:2}, printResponse);
 
