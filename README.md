@@ -1,7 +1,7 @@
 node-client
 ===========
 
-Node.js SDK for the BlockCypher Web services. See [http://dev.blockcypher.com](http://dev.blockcypher.com/) for detailed documentation.
+Node.js SDK for the BlockCypher Web services. See [https://www.blockcypher.com/dev/bitcoin/](https://www.blockcypher.com/dev/bitcoin/) for detailed documentation.
 
 To install, just use npm:
 
