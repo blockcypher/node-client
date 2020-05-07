@@ -14,7 +14,7 @@ let network = 'main';
 let token = process.env.TOKEN;
 let bcapi = new BlockCypher(chain, network, token);
 
-
+/*
 describe('Blockcypher _get Method: ', function () {
 
   it('should return success and return data', test(function (done) {
@@ -74,3 +74,4 @@ describe('Blockcypher _get Method: ', function () {
   }));
 
 });//end of _get
+*/

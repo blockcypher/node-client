@@ -14,7 +14,7 @@ let network = 'main';
 let token = process.env.TOKEN;
 let bcapi = new BlockCypher(chain, network, token);
 
-
+/*
 describe('Blockcypher _post Method: ', function () {
 
   it('should return success statusCode 200 and return data', test(function (done) {
@@ -104,3 +104,4 @@ describe('Blockcypher _post Method: ', function () {
   }));
 
 });//end of _post
+*/
