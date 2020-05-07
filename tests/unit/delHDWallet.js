@@ -4,7 +4,7 @@ const sinon = require('sinon');
 const sinonTest = require('sinon-test');
 var test = sinonTest(sinon);
 const expect = require('chai').expect;
-let request = require('request');
+let request = require('superagent');
 
 
 let BlockCypher = require('../../lib/bcypher');
