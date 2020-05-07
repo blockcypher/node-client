@@ -1,3 +1,5 @@
+![Node.js CI](https://github.com/blockcypher/node-client/workflows/Node.js%20CI/badge.svg)
+
 node-client
 ===========
 
