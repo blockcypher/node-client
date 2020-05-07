@@ -15,7 +15,7 @@ Examples
 ```javascript
 bcypher = require('blockcypher');
 
-var bcapi = new bcypher('btc','main','YOURTOKEN');
+var bcapi = new bcypher('btc','main',process.env.TOKEN);
 
 function printResponse(err, data) {
   if (err !== null) {
