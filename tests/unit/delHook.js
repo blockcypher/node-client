@@ -2,6 +2,7 @@
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonTest = require('sinon-test');
+var test = sinonTest(sinon);
 const expect = require('chai').expect;
 let request = require('request');
 
@@ -18,7 +19,7 @@ describe('Blockcypher delHook Method: ', function () {
 
   describe('Success: ', function () {
 
-    it('When id exists', sinon.test(function (done) {
+    it('When id exists', test(function (done) {
 
       let id = 'myName';
       let validParams = {};
@@ -44,7 +45,7 @@ describe('Blockcypher delHook Method: ', function () {
 
   describe('Errors: ', function () {
 
-    it('bubbles up error when _del returns error', sinon.test(function (done) {
+    it('bubbles up error when _del returns error', test(function (done) {
 
       let id = 'myName';
       let validParams = {};

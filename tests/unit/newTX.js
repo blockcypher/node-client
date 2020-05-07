@@ -2,6 +2,7 @@
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonTest = require('sinon-test');
+var test = sinonTest(sinon);
 const expect = require('chai').expect;
 let request = require('request');
 
@@ -18,7 +19,7 @@ describe('Blockcypher newTX Method: ', function () {
 
   describe('Success: ', function () {
 
-    it('When tx exist', sinon.test(function (done) {
+    it('When tx exist', test(function (done) {
 
       let tx = {}; //TODO make actual tx
 
@@ -47,7 +48,7 @@ describe('Blockcypher newTX Method: ', function () {
 
   describe('Errors: ', function () {
 
-    it('bubbles up error when _post returns error', sinon.test(function (done) {
+    it('bubbles up error when _post returns error', test(function (done) {
 
       let tx = {}; //TODO make actual tx
       let validData = tx;

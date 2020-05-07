@@ -2,6 +2,7 @@
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonTest = require('sinon-test');
+var test = sinonTest(sinon);
 const expect = require('chai').expect;
 let request = require('request');
 
@@ -18,7 +19,7 @@ describe('Blockcypher getTX Method: ', function () {
 
   describe('Success: ', function () {
 
-    it('When hash is a string and params exists', sinon.test(function (done) {
+    it('When hash is a string and params exists', test(function (done) {
 
       let hash = '12345';
       let params = {};
@@ -40,7 +41,7 @@ describe('Blockcypher getTX Method: ', function () {
       });
     }));
 
-    it.skip('When hash is a string and params does NOT exist', sinon.test(function (done) {
+    it.skip('When hash is a string and params does NOT exist', test(function (done) {
 
       let hash = '12345';
       let params = {};
@@ -67,7 +68,7 @@ describe('Blockcypher getTX Method: ', function () {
 
   describe('Errors: ', function () {
 
-    it('bubbles up error when _get returns error', sinon.test(function (done) {
+    it('bubbles up error when _get returns error', test(function (done) {
 
       let hash = '12345';
       let params = {};
