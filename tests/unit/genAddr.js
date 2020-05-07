@@ -2,6 +2,7 @@
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonTest = require('sinon-test');
+var test = sinonTest(sinon);
 const expect = require('chai').expect;
 let request = require('request');
 
@@ -18,7 +19,7 @@ describe('Blockcypher genAddr Method: ', function () {
 
   describe('Success: ', function () {
 
-    it('When data is an empty object', sinon.test(function (done) {
+    it('When data is an empty object', test(function (done) {
 
       let data = {};
       let params = {};
@@ -47,7 +48,7 @@ describe('Blockcypher genAddr Method: ', function () {
 
   describe('Errors: ', function () {
 
-    it('bubbles up error when _post returns error', sinon.test(function (done) {
+    it('bubbles up error when _post returns error', test(function (done) {
 
       let data = {};
       let params = {};

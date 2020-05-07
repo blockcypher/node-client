@@ -2,6 +2,7 @@
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonTest = require('sinon-test');
+var test = sinonTest(sinon);
 const expect = require('chai').expect;
 let request = require('request');
 
@@ -16,7 +17,7 @@ let bcapi = new BlockCypher(chain, network, token);
 
 describe('Blockcypher _post Method: ', function () {
 
-  it('should return success statusCode 200 and return data', sinon.test(function (done) {
+  it('should return success statusCode 200 and return data', test(function (done) {
     let post = this.spy(bcapi._post).bind(bcapi);
     let validReturn = { data: { key1: 'value', key2: 2 } };
     let inputBody = { data: {} };
@@ -37,7 +38,7 @@ describe('Blockcypher _post Method: ', function () {
     });
   }));
 
-  it('should return success statusCode 201 and return data', sinon.test(function (done) {
+  it('should return success statusCode 201 and return data', test(function (done) {
     let post = this.spy(bcapi._post).bind(bcapi);
     let validReturn = { data: { key1: 'value', key2: 2 } };
     let inputBody = { data: {} };
@@ -59,7 +60,7 @@ describe('Blockcypher _post Method: ', function () {
   }));
 
 
-  it('should return error and empty data when response body is null', sinon.test(function (done) {
+  it('should return error and empty data when response body is null', test(function (done) {
     let post = this.spy(bcapi._post).bind(bcapi);
     let badRequestError = "Bad Request";
     let inputBody = { data: {} };
@@ -80,7 +81,7 @@ describe('Blockcypher _post Method: ', function () {
     });
   }));
 
-  it('should return error and data when response body exists', sinon.test(function (done) {
+  it('should return error and data when response body exists', test(function (done) {
     let post = this.spy(bcapi._post).bind(bcapi);
     let badRequestError = "Bad Request";
     let badRequestData = { message: 'badRequeset' };

@@ -2,6 +2,7 @@
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonTest = require('sinon-test');
+var test = sinonTest(sinon);
 const expect = require('chai').expect;
 let request = require('request');
 
@@ -18,7 +19,7 @@ describe('Blockcypher getHDWallet Method: ', function () {
 
   describe('Success: ', function () {
 
-    it('When name a string and params exists', sinon.test(function (done) {
+    it('When name a string and params exists', test(function (done) {
 
       let name = 'human';
       let params = {};
@@ -44,7 +45,7 @@ describe('Blockcypher getHDWallet Method: ', function () {
 
   describe('Errors: ', function () {
 
-    it('bubbles up error when _get returns error', sinon.test(function (done) {
+    it('bubbles up error when _get returns error', test(function (done) {
 
       let name = '12345';
       let params = {};

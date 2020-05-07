@@ -2,6 +2,7 @@
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonTest = require('sinon-test');
+var test = sinonTest(sinon);
 const expect = require('chai').expect;
 let request = require('request');
 
@@ -15,7 +16,7 @@ let bcapi = new BlockCypher(chain, network, token);
 
 describe('Blockcypher listHooks Method: ', function () {
 
-  it('should return success', sinon.test(function (done) {
+  it('should return success', test(function (done) {
 
     let validEndpoint = '/hooks';
     let params = {};
@@ -37,7 +38,7 @@ describe('Blockcypher listHooks Method: ', function () {
   }));
 
 
-  it('should return error', sinon.test(function (done) {
+  it('should return error', test(function (done) {
     let validReturn = {};
     let validEndpoint = '/hooks';
 

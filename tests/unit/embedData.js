@@ -2,6 +2,7 @@
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonTest = require('sinon-test');
+var test = sinonTest(sinon);
 const expect = require('chai').expect;
 let request = require('request');
 
@@ -18,7 +19,7 @@ describe('Blockcypher embedData Method: ', function () {
 
   describe('Success: ', function () {
 
-    it('When hex exist', sinon.test(function (done) {
+    it('When hex exist', test(function (done) {
 
       let hex = 'fancyHex';
 
@@ -47,7 +48,7 @@ describe('Blockcypher embedData Method: ', function () {
 
   describe('Errors: ', function () {
 
-    it('bubbles up error when _post returns error', sinon.test(function (done) {
+    it('bubbles up error when _post returns error', test(function (done) {
 
       let hex = 'fancyHex';
       let validData = { data: hex };

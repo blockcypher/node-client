@@ -2,6 +2,7 @@
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonTest = require('sinon-test');
+var test = sinonTest(sinon);
 const expect = require('chai').expect;
 let request = require('request');
 
@@ -16,7 +17,7 @@ let bcapi = new BlockCypher(chain, network, token);
 
 describe('Blockcypher _get Method: ', function () {
 
-  it('should return success and return data', sinon.test(function (done) {
+  it('should return success and return data', test(function (done) {
     let get = this.spy(bcapi._get).bind(bcapi);
     let validReturn = { data: { key1: 'value', key2: 2 } };
     this.stub(request, 'get').yields(null, { statusCode: 200 }, validReturn);
@@ -35,7 +36,7 @@ describe('Blockcypher _get Method: ', function () {
   }));
 
 
-  it('should return error and empty data when response body is null', sinon.test(function (done) {
+  it('should return error and empty data when response body is null', test(function (done) {
     let get = this.spy(bcapi._get).bind(bcapi);
     let badRequestError = "Bad Request";
     this.stub(request, 'get').yields(badRequestError, { statusCode: 400 });
@@ -53,7 +54,7 @@ describe('Blockcypher _get Method: ', function () {
     });
   }));
 
-  it('should return error and data when response body exists', sinon.test(function (done) {
+  it('should return error and data when response body exists', test(function (done) {
     let get = this.spy(bcapi._get).bind(bcapi);
     let badRequestError = "Bad Request";
     let badRequestData = { message: 'badRequeset' };

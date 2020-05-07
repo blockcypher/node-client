@@ -2,6 +2,7 @@
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonTest = require('sinon-test');
+var test = sinonTest(sinon);
 const expect = require('chai').expect;
 let request = require('request');
 
@@ -17,7 +18,7 @@ describe('Blockcypher getAddrBal Method: ', function () {
 
   describe('Success: ', function () {
 
-    it('When addr a string and params exists', sinon.test(function (done) {
+    it('When addr a string and params exists', test(function (done) {
 
       let addr = '12345';
       let params = {};
@@ -39,7 +40,7 @@ describe('Blockcypher getAddrBal Method: ', function () {
       });
     }));
 
-    it('When addr is an int and params exists', sinon.test(function (done) {
+    it('When addr is an int and params exists', test(function (done) {
 
       let addr = 12345;
       let params = {};
@@ -61,7 +62,7 @@ describe('Blockcypher getAddrBal Method: ', function () {
       });
     }));
 
-    it('When addr is a string and params does NOT exist', sinon.test(function (done) {
+    it('When addr is a string and params does NOT exist', test(function (done) {
 
       let addr = '12345';
       let params = {};
@@ -83,7 +84,7 @@ describe('Blockcypher getAddrBal Method: ', function () {
       });
     }));
 
-    it('When addr is an int and params does NOT exist', sinon.test(function (done) {
+    it('When addr is an int and params does NOT exist', test(function (done) {
 
       let addr = 12345;
       let params = {};
@@ -109,7 +110,7 @@ describe('Blockcypher getAddrBal Method: ', function () {
 
   describe('Errors: ', function () {
 
-    it('bubbles up error when _get returns error', sinon.test(function (done) {
+    it('bubbles up error when _get returns error', test(function (done) {
 
       let addr = '12345';
       let params = {};
